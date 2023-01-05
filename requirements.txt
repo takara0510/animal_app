@@ -74,7 +74,7 @@ pip==22.3.1
 # pysocks==1.7.1
 # python==3.9.15
 # python_abi==3.9
-pytorch==1.12.1
+# pytorch==1.12.1
 pytorch-lightning==1.8.1
 # pyu2f==0.1.5
 # pyyaml==6.0
