@@ -17,12 +17,16 @@ import io
 from PIL import Image
 import base64
 
+import os
+os.chdir(os.path.dirname(__file__))
+
 # 学習済みモデルをもとに推論する
 def predict(img):
     # ネットワークの準備
     net = Net().cpu().eval()
     # # 学習済みモデルの重み（dog_cat.pt）を読み込み
-    net.load_state_dict(torch.load('./src/dog_cat.pt', map_location=torch.device('cpu'))) # デバイスは cpu を指定
+    # net.load_state_dict(torch.load('./src/dog_cat.pt', map_location=torch.device('cpu'))) # デバイスは cpu を指定
+    net.load_state_dict(torch.load('dog_cat.pt', map_location=torch.device('cpu'))) # デバイスは cpu を指定
     #　データの前処理
     img = transform(img)
     img =img.unsqueeze(0) # 1次元増やす
